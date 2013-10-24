@@ -24,7 +24,13 @@ namespace :setup do
     end
   end
 
+  # Override setup:custom in your project to add project-specific tasks
+  namespace :custom do
+    task :before
+    task :after
+  end
+
 end
 
 desc 'Run all setup tasks'
-task :setup => 'setup:config_files'
+task :setup => ['setup:custom:before', 'setup:config_files', 'setup:custom:after']
