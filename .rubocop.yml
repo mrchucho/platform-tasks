@@ -4,6 +4,7 @@ AllCops:
     - doc/**
     - db/**
     - config/**
+    - tmp/**
 
 inherit_from:
   - .rubocop-platform.yml
