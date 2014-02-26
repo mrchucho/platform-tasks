@@ -6,6 +6,7 @@ module Platform
       rake_tasks do
         load 'platform/tasks/ci.rake'
         load 'platform/tasks/setup.rake'
+        load 'platform/tasks/cop.rake'
       end
     end
   end

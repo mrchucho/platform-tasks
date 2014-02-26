@@ -1,0 +1,10 @@
+AllCops:
+  Excludes:
+    - vendor/**
+    - doc/**
+    - db/**
+    - config/**
+
+inherit_from:
+  - .rubocop-platform.yml
+  - rubocop-todo.yml
