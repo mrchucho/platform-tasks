@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['ralph.churchill@vitals.com']
   spec.description   = %q{Common Platform tasks}
   spec.summary       = %q{Include rake tasks for development setup and CI}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/mrchucho/platform-tasks'
   spec.license       = 'MIT'
 
   spec.files         = [
