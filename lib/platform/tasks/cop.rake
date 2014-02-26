@@ -1,19 +1,19 @@
 namespace :cop do
 
-  desc 'Run the Lint cops'
-  task :lint do
+  desc 'Run all cops'
+  task :all do
     configure do
       system """
-      bundle exec rubocop --lint
+      bundle exec rubocop --rails
       """
     end
   end
 
-  desc 'Run the Rails cops'
-  task :rails do
+  desc 'Run only the Lint cops'
+  task :lint do
     configure do
       system """
-      bundle exec rubocop --rails
+      bundle exec rubocop --lint
       """
     end
   end
@@ -62,4 +62,4 @@ namespace :cop do
 end
 
 desc 'Run rubocop with All cops'
-task :cop => %w(cop:lint cop:rails)
+task :cop => %w(cop:all)
