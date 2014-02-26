@@ -4,7 +4,7 @@ namespace :cop do
   task :all do
     configure do
       system """
-      bundle exec rubocop --rails
+      bundle exec rubocop -D --rails
       """
     end
   end
@@ -13,7 +13,7 @@ namespace :cop do
   task :lint do
     configure do
       system """
-      bundle exec rubocop --lint
+      bundle exec rubocop -D --lint
       """
     end
   end
