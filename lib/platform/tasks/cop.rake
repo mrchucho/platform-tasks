@@ -24,7 +24,7 @@ namespace :cop do
       system """
       bundle exec rubocop --require rubocop/formatter/checkstyle_formatter \
                           --format Rubocop::Formatter::CheckstyleFormatter \
-                          --no-color #{output}
+                          --no-color --rails #{output}
       """
     end
   end
