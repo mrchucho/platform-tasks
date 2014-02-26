@@ -1,4 +1,4 @@
-require "platform/tasks/version"
+require 'platform/tasks/version'
 
 module Platform
   module Tasks

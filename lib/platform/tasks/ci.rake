@@ -21,4 +21,3 @@ end
 
 desc 'Run rspec and cucumber'
 task :ci => %w(ci:rspec ci:cucumber)
-
