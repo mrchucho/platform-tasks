@@ -18,12 +18,27 @@ namespace :cop do
     end
   end
 
+  desc 'Run rubocop for CI (specify results output file w/ OUTPUT)'
+  task :ci do
+    configure do
+      system """
+      bundle exec rubocop --require rubocop/formatter/checkstyle_formatter \
+                          --format Rubocop::Formatter::CheckstyleFormatter \
+                          --no-color #{output}
+      """
+    end
+  end
+
   task :setup do
     FileUtils.cp template_config_files, '.'
   end
 
   task :cleanup do
     FileUtils.rm config_files
+  end
+
+  def output
+    ENV['OUTPUT'].blank? ? nil : "--out #{ENV['OUTPUT']}"
   end
 
   def config_files
@@ -46,5 +61,5 @@ namespace :cop do
 
 end
 
-desc 'Run rubocop'
+desc 'Run rubocop with All cops'
 task :cop => %w(cop:lint cop:rails)
